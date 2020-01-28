@@ -1,0 +1,29 @@
+{
+  "name": "life4bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node life4bot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "discord.io": "^2.5.3",
+    "discord.js": "^11.5.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.17.1",
+    "fibers": "^3.1.1",
+    "googleapis": "^27.0.0",
+    "mysql": "^2.17.1",
+    "npm": "^6.13.4",
+    "promise": "^8.0.3",
+    "twit": "^2.2.11",
+    "wait.for": "^0.6.6"
+  },
+  "engines": {
+    "node": "10.17.0"
+  }
+}
