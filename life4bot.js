@@ -1,13 +1,13 @@
-//Life4DDRBot
-//Created by Steve Sefchick - 2019
-//Tweets to @Life4DDRBot
+//LIFE4 MESSENGER - PART OF DDR BOT
+//Created by Steve Sefchick - 2020
+//Used for discord interaction
 //built using NodeJS
 
 
 const fs = require('fs');
-var twit = require('twit');
+//var twit = require('twit');
 var config = require('./config.js');
-var Twitter = new twit(config);
+//var Twitter = new twit(config);
 
 
 var Discord = require('discord.js');
@@ -25,7 +25,6 @@ bot.on('ready', () => {
 
 
 //BOT LISTEN FOR MESSAGES
-/*
   bot.on('message', (message) => {
 
     
@@ -78,7 +77,7 @@ bot.on('ready', () => {
   }
 });
 
-*/
+
 
 
 
@@ -571,32 +570,11 @@ function getTopTrialSequence(trialname,limit,req,res)
 };
 
 
-
-
-
-
-
-
- 
-
-  
-
-
-
-
-//run main class
-var getSpreadsheet = function()
-{
-  var spreadsheet = require('./spreadsheet.js');
-}
-
 //check for needed activity
 var life4actionTime = function()
 {
 
     console.log('App is running!!!');
-    //this works
-    getSpreadsheet();
 }
 
 
