@@ -1,1 +1,3 @@
-Bot code for LIFE4
+Code for the LIFE4 Bot running on discord!
+
+//TODO: Add stuff here!

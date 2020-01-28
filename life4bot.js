@@ -3,6 +3,7 @@
 //Used for discord interaction
 //built using NodeJS
 
+//TODO: Add to README.md
 
 const fs = require('fs');
 //var twit = require('twit');
