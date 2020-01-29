@@ -23,6 +23,18 @@ bot.on('ready', () => {
   });
 
 
+//TODO: Work on this!
+  //TEST! Look for new members
+  bot.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.find(ch => ch.name === 'general-chat');
+    const postchannel = bot.channels.find('name', 'admin-bot');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    // Send the message, mentioning the member
+    postchannel.send(`${member} has joined! This is a test!`);
+  });
+
 
 
 //BOT LISTEN FOR MESSAGES
