@@ -26,13 +26,14 @@ bot.on('ready', () => {
 //TODO: Work on this!
   //TEST! Look for new members
   bot.on('guildMemberAdd', member => {
-    // Send the message to a designated channel on a server:
     const channel = member.guild.channels.find(ch => ch.name === 'general-chat');
     const postchannel = bot.channels.find('name', 'admin-bot');
+    var message = `Welcome ${member} to LIFE4! Feel free to tell us a bit about yourself in #introductions. \n Also, what's your favorite DDR song and why is it...`;
+    
     // Do nothing if the channel wasn't found on this server
     if (!channel) return;
     // Send the message, mentioning the member
-    postchannel.send(`${member} has joined! This is a test!`);
+    postchannel.send(message);
   });
 
 
