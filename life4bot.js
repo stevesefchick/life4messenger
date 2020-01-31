@@ -23,13 +23,16 @@ bot.on('ready', () => {
   });
 
 
-//TODO: Work on this!
-  //TEST! Look for new members
+  //Function to look for new members
   bot.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'general-chat');
-    const postchannel = bot.channels.find('name', 'admin-bot');
-    var message = `Welcome ${member} to LIFE4! Feel free to tell us a bit about yourself in #introductions. \n Also, what's your favorite DDR song and why is it...`;
+    const postchannel = bot.channels.find('name', 'general-chat');
+    const LOG_CHANNEL_ID = `<#531607424650444820>`;
+
+    var message = `Welcome ${member} to LIFE4! Feel free to tell us a bit about yourself in `+LOG_CHANNEL_ID+`. \n Also, what's your favorite DDR song and why is it...`;
     
+
+
     // Do nothing if the channel wasn't found on this server
     if (!channel) return;
     // Send the message, mentioning the member
