@@ -66,6 +66,16 @@ bot.on('ready', () => {
       }
     }
 
+        //DISCORD @ TEST
+        if(msg.includes(bot.user.toString()) && msg.includes('caesar salad')) {
+          if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
+            return message.reply("Only admins can run this, sorry friend!");
+          else
+          {
+            wait.launchFiber(getAppTestSequenceDiscord,message);
+          }
+        }
+
     //TURN ON
     if(msg.includes(bot.user.toString()) && msg.includes('turn on')) {
       if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
@@ -222,11 +232,50 @@ function getAppStatusSequenceDiscord(message)
 };
 
 
+//
+// TEST
+//
+
+
+function discordSendTestAtMessage(message,callback)
+{
+  setTimeout( function(){
+
+    var messagetext = "";
+    var user = bot.users.get('name','stevesefchick#7960').id;
+    //var user = "<@275626417629298691>";
+
+    console.log(user);
+      messagetext = "Hello " + user + " this is a test";
+
+    message.reply(messagetext);
+
+}, 750);
+
+}
+
+function getAppTestSequenceDiscord(message)
+{
+  connection = mysql.createConnection({
+    host     : process.env.MYSQLHOST,
+    user     : process.env.MYSQLUSER,
+    password : process.env.MYSQLPW,
+    database : process.env.MYSQLPLAYERDB
+  });
+  connection.connect();
+
+  console.log("HARSE!");
+  wait.for(discordSendTestAtMessage,message);
+};
+
+
+
 
 
 //
 // CHANGE STATUS
 //
+
 
 //API
 app.get("/api/app/status/change", function(req, res) {
