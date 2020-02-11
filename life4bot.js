@@ -242,11 +242,14 @@ function discordSendTestAtMessage(message,callback)
   setTimeout( function(){
 
     var messagetext = "";
-    var user = bot.users.get('name','stevesefchick#7960').id;
+    //var user = message.guild.members.get("275626417629298691");
+    var user = bot.users.find("username","stevesefchick");
+    var id = "<@" + user.id + ">";
     //var user = "<@275626417629298691>";
+    //stevesefchick#7960
 
     console.log(user);
-      messagetext = "Hello " + user + " this is a test";
+      messagetext = "Hello " + id + " this is a test";
 
     message.reply(messagetext);
 
