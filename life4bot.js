@@ -1,5 +1,5 @@
 //LIFE4 MESSENGER - PART OF DDR BOT
-//Created by Steve Sefchick - 2020
+//Created by Steve Sefchick - 2020-2021
 //Used for discord interaction
 //built using NodeJS
 
@@ -43,6 +43,7 @@ bot.on('ready', () => {
 
 //BOT LISTEN FOR MESSAGES
   bot.on('message', (message) => {
+    let myRole = message.guild.roles.cache.get("530615149531365393");
 
     
     var msg = message.content;
@@ -58,7 +59,9 @@ bot.on('ready', () => {
 
     //GET STATUS
     if(msg.includes(bot.user.toString()) && msg.includes('status')) {
+
       if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
+      //if(message.member.roles.cache.has('<@&530615149531365393>'))
         return message.reply("Only admins can run this, sorry friend!");
       else
       {
@@ -601,6 +604,7 @@ function translateTrialName(trialName)
   {
     trialName = "SPECTACLE (16)";
   }
+  //TODO: Add new trials
   return trialName;
 };
 
@@ -641,6 +645,7 @@ var life4actionTime = function()
 {
 
     console.log('App is running!!!');
+
 }
 
 
