@@ -60,45 +60,45 @@ bot.on('ready', () => {
     //GET STATUS
     if(msg.includes(bot.user.toString()) && msg.includes('status')) {
 
-      if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      //if(message.member.roles.cache.has('<@&530615149531365393>'))
-        return message.reply("Only admins can run this, sorry friend!");
-      else
+      if (message.channel.id === '596168285477666832')
       {
         wait.launchFiber(getAppStatusSequenceDiscord,message);
+
       }
+
     }
 
         //DISCORD @ TEST
         if(msg.includes(bot.user.toString()) && msg.includes('caesar salad')) {
-          if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-            return message.reply("Only admins can run this, sorry friend!");
-          else
+          if (message.channel.id === '596168285477666832')
           {
             wait.launchFiber(getAppTestSequenceDiscord,message);
+    
           }
         }
 
     //TURN ON
     if(msg.includes(bot.user.toString()) && msg.includes('turn on')) {
-      if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-        return message.reply("Only admins can run this, sorry friend!");
-      else
+
+      if (message.channel.id === '596168285477666832')
       {
         wait.launchFiber(changeAppStatusSequenceDiscord,message,"ON");
+
       }
+      
     }
 
 
     //TURN OFF
     //TURN ON
     if(msg.includes(bot.user.toString()) && msg.includes('turn off')) {
-      if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-        return message.reply("Only admins can run this, sorry friend!");
-      else
+
+      if (message.channel.id === '596168285477666832')
       {
         wait.launchFiber(changeAppStatusSequenceDiscord,message,"OFF");
+
       }
+
     }
 
     //PLAYER LOOKUP
