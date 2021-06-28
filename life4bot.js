@@ -69,7 +69,7 @@ bot.on('ready', () => {
     }
 
         //DISCORD @ TEST
-        if(msg.includes(bot.user.toString()) && msg.includes('caesar salad')) {
+        if(msg.includes(bot.user.toString()) && msg.includes('test dis')) {
           if (message.channel.id === '596168285477666832')
           {
             wait.launchFiber(getAppTestSequenceDiscord,message);
@@ -245,10 +245,12 @@ function discordSendTestAtMessage(message,callback)
   setTimeout( function(){
 
     var messagetext = "";
-    var user = bot.users.find("tag","stevesefchick#7960");
-    var id = "<@" + user.id + ">";
 
-    console.log(user);
+    var userid = bot.users.cache.find(u => u.tag === 'stevesefchick#7960').id;
+
+    var id = "<@" + userid + ">";
+
+    console.log("userid = " + id);
       messagetext = "Hello " + id + " this is a test";
 
     message.reply(messagetext);
